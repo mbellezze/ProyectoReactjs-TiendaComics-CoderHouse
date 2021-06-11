@@ -2,13 +2,14 @@ import React from 'react';
 import './App.css';
 import { CommonComponent } from './components/ReutilizacionError/CommonComponent/CommonComponent';
 import {NavBar} from './components/NavBar/NavBar';
-import { CartWidget } from './components/CartWidget/CartWidget';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { ItemCount } from './components/ItemCount/ItemCount';
 
 function App() {
   return ( <>
     <NavBar img='./img/carritoCompra.png'/>
     <ItemListContainer texto='Titulo provisional para reemplazar luego'/>
+    <ItemCount />
     {/* <CommonComponent titulo='Upps! Página incorrecta'
     img='./img/notFound.jpg'
     alt='imagen que muestra cuando ingreso a una página incorrecta'/> */}
