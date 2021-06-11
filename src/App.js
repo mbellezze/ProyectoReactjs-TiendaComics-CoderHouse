@@ -9,7 +9,7 @@ function App() {
   return ( <>
     <NavBar img='./img/carritoCompra.png'/>
     <ItemListContainer texto='Titulo provisional para reemplazar luego'/>
-    <ItemCount />
+    <ItemCount stock={10} initial={1} etiquetaBoton='Agregar al carrito'/>
     {/* <CommonComponent titulo='Upps! Página incorrecta'
     img='./img/notFound.jpg'
     alt='imagen que muestra cuando ingreso a una página incorrecta'/> */}

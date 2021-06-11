@@ -4,27 +4,18 @@ import { itemCountStyle } from './ItemCountStyle';
 
 const useStyles = makeStyles((theme) => itemCountStyle(theme));
 
-export const ItemCount = props => {
+export const ItemCount = ({stock, initial, etiquetaBoton}) => {
     const classes = useStyles();
-    const [initial, setInitial] = useState(1);
-    const stock = 10;
+    const [count, setCount] = useState(initial);
 
-    const handleChange = () => {
-        if (initial < stock) {
-            setInitial(initial+1);
-        }
-    }
-
-    const handleChange2 = () => {
-        if (initial > 0) {
-            setInitial(initial-1);
-        }
-    }
-
-    return <div className={classes.container}>
-        <Button onClick={e => handleChange()}>+</Button>
-        <h4>{initial}</h4>
-        <Button onClick={e => handleChange2()}>-</Button>
-        <Button>Agregar al carrito</Button>
-    </div>
+    
+    return  <div className={classes.container}>
+                <h5>Cantidad disponilbe: {stock-count} unidades</h5>
+                <div>
+                    <Button onClick={e => {setCount(count-1)}} disabled={count===0}>-</Button>
+                    <h4>{count}</h4>
+                    <Button onClick={e => {setCount(count+1)}} disabled={count===10}>+</Button>
+                </div>
+                <Button>{etiquetaBoton}</Button>
+            </div>
 }
