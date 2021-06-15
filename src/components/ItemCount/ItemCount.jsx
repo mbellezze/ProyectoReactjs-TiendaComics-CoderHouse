@@ -14,7 +14,7 @@ export const ItemCount = ({stock, initial, etiquetaBoton}) => {
                 <div>
                     <Button onClick={e => {setCount(count-1)}} disabled={count===0}>-</Button>
                     <h4>{count}</h4>
-                    <Button onClick={e => {setCount(count+1)}} disabled={count===10}>+</Button>
+                    <Button onClick={e => {setCount(count+1)}} disabled={count===stock}>+</Button>
                 </div>
                 <Button>{etiquetaBoton}</Button>
             </div>
