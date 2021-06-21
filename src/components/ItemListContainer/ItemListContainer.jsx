@@ -1,17 +1,13 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
-import { itemListContainerStyle } from './ItemListContainerStyle';
 import { ItemList } from '../ItemList/ItemList';
-
+import { makeStyles } from '@material-ui/styles';
+import { itemListContainerStyle } from './ItemListContainerStyle';
 
 const useStyles = makeStyles((theme) => itemListContainerStyle(theme));
 
-export const ItemListContainer = ({texto}) => {
+export const ItemListContainer = props => {
     const classes = useStyles();
     return (
-        <div className={classes.container} >
-            {/* {texto} */}
-            <ItemList />
-        </div>
+        <div className={classes.container}><ItemList/></div>
     );
 }

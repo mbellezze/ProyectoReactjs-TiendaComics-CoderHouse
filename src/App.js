@@ -4,12 +4,13 @@ import { CommonComponent } from './components/ReutilizacionError/CommonComponent
 import {NavBar} from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemCount } from './components/ItemCount/ItemCount';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
 
 function App() {
   return ( <>
-    <NavBar img='./img/carritoCompra.png'/>
-    <ItemListContainer texto='Titulo provisional para reemplazar luego'/>
-    <ItemCount stock={10} initial={1} etiquetaBoton='Agregar al carrito'/>
+    <NavBar img='./img/carritoCompra.png' alt='imagen carrito de compras'/>
+    <ItemDetailContainer />
+    {/* <ItemListContainer /> */}
     {/* <CommonComponent titulo='Upps! Página incorrecta'
     img='./img/notFound.jpg'
     alt='imagen que muestra cuando ingreso a una página incorrecta'/> */}

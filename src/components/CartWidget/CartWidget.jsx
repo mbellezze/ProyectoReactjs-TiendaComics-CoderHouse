@@ -1,15 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
-import { cartWidgetStyle } from './CartWidgetStyle';
 
 
-const useStyles = makeStyles((theme) => cartWidgetStyle(theme));
-
-export const CartWidget = ({img}) => {
-    const classes = useStyles();
+export const CartWidget = ({img, alt}) => {
     return (
-        <a className={classes.img} >
-            <img src={img}/>
-        </a>
+        <a href='#'><img src={img} alt={alt}/></a>
     );
 }

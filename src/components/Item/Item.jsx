@@ -1,20 +1,37 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core';
+import { itemStyle } from './ItemStyle';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Typography from '@material-ui/core/Typography';
+import { ItemCount } from '../ItemCount/ItemCount';
 
-const data = [
-    { txt: 'Descripcion 1' },
-    { txt: 'Descripcion 2' },
-    { txt: 'Descripcion 3' },
-]
+const useStyles = makeStyles((theme) => itemStyle(theme));
 
-const Descripcion = ({ titulo, i }) => {
-    return <React.Fragment key={i}>
-        <h6>{titulo}</h6>
-    </React.Fragment>      
-}
+export const Item = ({id, title, description, price, stock, imagenUrl, alt}) => {
+    const classes = useStyles();
 
-export const Item = props => {
-    const listaDescripciones = data.map((element, i) => <Descripcion titulo={element.txt} i={i} />);
-    return  <div>
-        {listaDescripciones}    
-        </div>
+    return <>
+        <Card className={classes.cardPadre}>
+            <CardActionArea>
+                <CardMedia
+                    component='img'
+                    alt={alt}
+                    image={imagenUrl}
+                />
+                <CardContent>
+                    <Typography component="h2" className={classes.titulo}>{title}</Typography>
+                    <Typography color="textSecondary" component="p">{description}</Typography>
+                    <Typography className={classes.precio}>${price}</Typography>
+                    <Typography variant="h6" component="p">ID: {id}</Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions className={classes.contador}>
+                <ItemCount stock={stock} initial={1} etiquetaBoton='Agregar al carrito'/>
+            </CardActions>
+        </Card>
+    </>
 }

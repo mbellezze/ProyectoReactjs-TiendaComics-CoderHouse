@@ -6,16 +6,17 @@ import { CartWidget } from '../CartWidget/CartWidget';
 
 const useStyles = makeStyles((theme) => navBarStyle(theme));
 
-export const NavBar = ({img}) => {
+export const NavBar = ({img, alt}) => {
     const classes = useStyles();
     return (
         <nav className={classes.containerNav}>
-            <a href="#">Saurus</a>
+            <a href="#"><img className={classes.logo} src="./img/logo.png" alt="imagen del logo"/></a>
             <div>
-                <a href="#">Productos</a>
-                <a href="#">Categorias</a>
+                <a href="#">Marvel</a>
+                <a href="#">DC</a>
+                <a href="#">Independientes</a>
             </div>
-            <CartWidget img={img}/>
+            <CartWidget img={img} alt={alt}/>
         </nav>
     );
 }

@@ -1,4 +1,4 @@
-export const itemListStyle = theme => {
+export const itemDetailContainerStyle = theme => {
     return ({
         linearPro:{
             width: '100%'

@@ -3,25 +3,19 @@ export const navBarStyle = theme => {
         containerNav:{
             display: 'flex',
             alignItems: 'center',
-            padding: '20px',
-            backgroundColor: '#a8dd81',
-            '& > a':{
-                fontFamily: 'Frijole',
-                fontSize: '2em',
-                color: 'white',
-                marginRight: '50px',
-                textDecoration: 'none',
-                '& > img':{
-                    marginLeft: '800px',
-                }
+            backgroundColor: 'white',
+            '& > a > img':{
             },
             '& > div > a':{
-                fontFamily: 'Special Elite',
-                fontSize: '1.2em',
-                color: 'white',
+                fontFamily: 'Comic sans',
+                fontSize: '1.6em',
+                color: 'black',
                 marginRight: '20px',
                 textDecoration: 'none',
             }
+        },
+        logo: {
+            marginRight: '50px',
         }
     })
 }
