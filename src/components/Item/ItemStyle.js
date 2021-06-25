@@ -11,5 +11,9 @@ export const itemStyle = theme => {
         precio:{
             fontSize: '40px'
         },
+        contador:{
+            display: 'flex',
+            justifyContent: 'center'
+        }
     });
 };

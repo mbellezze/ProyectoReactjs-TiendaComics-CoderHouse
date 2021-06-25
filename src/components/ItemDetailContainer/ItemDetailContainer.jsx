@@ -40,7 +40,7 @@ export const ItemDetailContainer = () => {
     
     return <>
         { detalle.length === 0 ? (<div className={classes.linearPro}><LinearProgress/></div>) : 
-        (<div>
+        (<div className={classes.container}>
             {detalle.map((element) => <ItemDetail key={element.id}
             title={element.title}
             description={element.description}

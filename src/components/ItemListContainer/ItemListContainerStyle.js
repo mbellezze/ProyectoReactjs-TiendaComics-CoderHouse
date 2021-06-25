@@ -1,7 +1,8 @@
 export const itemListContainerStyle = theme => {
     return ({
         container:{
-            backgroundImage: './img/fondo1.jpg'
+            /* backgroundImage: '../public/img/fondo1.jpg' */
+            backgroundColor: 'orange'
         }
     });
 }

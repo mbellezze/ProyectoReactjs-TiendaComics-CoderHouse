@@ -1,21 +1,22 @@
 export const navBarStyle = theme => {
     return ({
         containerNav:{
-            display: 'flex',
-            alignItems: 'center',
+            position: 'static',
             backgroundColor: 'white',
-            '& > a > img':{
-            },
-            '& > div > a':{
-                fontFamily: 'Comic sans',
-                fontSize: '1.6em',
-                color: 'black',
-                marginRight: '20px',
-                textDecoration: 'none',
-            }
         },
-        logo: {
+        toolbar: {
+            padding: '10px 20px 10px 20px',
+        },
+        logo:{
             marginRight: '50px',
+        },
+        botones:{
+            fontSize: '1.5em',
+            fontFamily: 'Helvetica',
+            '&:hover':{
+                color: 'crimson',
+                backgroundColor: 'transparent'
+            }
         }
     })
 }
