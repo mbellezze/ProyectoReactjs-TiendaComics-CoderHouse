@@ -7,30 +7,29 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
-import { ItemCount } from '../ItemCount/ItemCount';
+import { ItemCount } from '../../../../../components/ItemCount/ItemCount';
+import { Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => itemStyle(theme));
 
-export const Item = ({id, title, description, price, stock, imagenUrl, alt}) => {
+export const Item = props => {
     const classes = useStyles();
 
     return <>
         <Card className={classes.cardPadre}>
             <CardActionArea>
-                <CardMedia
-                    component='img'
-                    alt={alt}
-                    image={imagenUrl}
-                />
+            <Link to={`/item/${props.id}`}>
+                <CardMedia component='img' alt={props.alt} image={props.imagenUrl}/> 
+            </Link>
                 <CardContent>
-                    <Typography component="h2" className={classes.titulo}>{title}</Typography>
-                    <Typography color="textSecondary" component="p">{description}</Typography>
-                    <Typography className={classes.precio}>${price}</Typography>
-                    <Typography variant="h6" component="p">ID: {id}</Typography>
+                    <Typography component="h2" className={classes.titulo}>{props.title}</Typography>
+                    <Typography color="textSecondary" component="p">{props.description}</Typography>
+                    <Typography className={classes.precio}>${props.price}</Typography>
+                    <Typography variant="h6" component="p">ID: {props.id}</Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions className={classes.contador}>
-                <ItemCount stock={stock} initial={1} etiquetaBoton='Agregar al carrito'/>
+                <ItemCount stock={props.stock} initial={1} etiquetaBoton='Agregar al carrito'/>
             </CardActions>
         </Card>
     </>

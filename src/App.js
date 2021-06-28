@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import {NavBar} from './components/NavBar/NavBar';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
-import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { ItemListContainer } from './screens/ItemListContainer/ItemListContainer';
+import { ItemDetailContainer } from './screens/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return <BrowserRouter>

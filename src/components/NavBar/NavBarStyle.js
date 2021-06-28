@@ -1,22 +1,39 @@
 export const navBarStyle = theme => {
     return ({
         containerNav:{
-            position: 'static',
             backgroundColor: 'white',
         },
         toolbar: {
-            padding: '10px 20px 10px 20px',
+            padding: '3px 20px 2px 20px',
         },
         logo:{
             marginRight: '50px',
         },
-        botones:{
-            fontSize: '1.5em',
-            fontFamily: 'Helvetica',
+        links:{
+            marginRight: '50px',
+            fontSize: '2em',
+            fontFamily: 'Acme , sans-serif',
+            textDecoration: 'none',
+            position: 'relative',
+            '&:after':{
+                content: '',
+                position: 'absolute',
+                bottom: '0',
+                left: '0',
+                right: '0',
+                width: '100%',
+                height: '3px',
+                transform: 'scaleX(0%)',
+                backgroundColor: '#20C2F7',
+                transition: 'transform 0.3s'
+            },
+            '&:hover:after':{
+                transform: 'scaleX(100%)',
+            },
             '&:hover':{
-                color: 'crimson',
-                backgroundColor: 'transparent'
+                color: '#20C2F7',
+                
             }
         }
-    })
+    });
 }

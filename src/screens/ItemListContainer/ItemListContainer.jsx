@@ -1,5 +1,5 @@
 import React from 'react';
-import { ItemList } from '../ItemList/ItemList';
+import { ItemList } from '../ItemListContainer/ItemList/ItemList';
 import { makeStyles } from '@material-ui/styles';
 import { itemListContainerStyle } from './ItemListContainerStyle';
 

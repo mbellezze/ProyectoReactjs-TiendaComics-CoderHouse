@@ -17,10 +17,10 @@ export const NavBar = ({img, alt}) => {
     return (<>
         <AppBar className={classes.containerNav}>
             <Toolbar className={classes.toolbar}>
-                <Link to={'/'}><img className={classes.logo} src="./img/logo.png" alt="imagen del logo"/></Link>
-                <Link to={`/category/${marvel}`} className={classes.botones}>Marvel</Link>
-                <Link to={`/category/${dc}`}className={classes.botones}>DC</Link>
-                <Link to={`/category/${indep}`}className={classes.botones}>Independiente</Link>
+                <Link to={'/'}><img className={classes.logo} src="../img/logo.png" alt="imagen del logo"/></Link>
+                <Link to={`/category/${marvel}`} className={classes.links}>Marvel</Link>
+                <Link to={`/category/${dc}`} className={classes.links}>DC</Link>
+                <Link to={`/category/${indep}`} className={classes.links}>Independiente</Link>
                 <CartWidget img={img} alt={alt}/>
             </Toolbar>
         </AppBar>

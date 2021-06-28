@@ -7,6 +7,6 @@ const useStyles = makeStyles((theme) => cartWidgetStyle(theme));
 export const CartWidget = ({img, alt}) => {
     const classes = useStyles();
     return (
-        <a href='#' className={classes.imagen}><img src={img} alt={alt}/></a>
+        <img className={classes.imagen}src={img} alt={alt}/>
     );
 }
