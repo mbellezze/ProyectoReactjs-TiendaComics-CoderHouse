@@ -5,9 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
-import { ItemCount } from '../../../../../components/ItemCount/ItemCount';
 import { Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => itemStyle(theme));
@@ -28,9 +26,6 @@ export const Item = props => {
                     <Typography variant="h6" component="p">ID: {props.id}</Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions className={classes.contador}>
-                <ItemCount stock={props.stock} initial={1} etiquetaBoton='Agregar al carrito'/>
-            </CardActions>
         </Card>
     </>
 }
