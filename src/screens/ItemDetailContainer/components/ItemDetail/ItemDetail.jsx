@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import { itemDetailStyle } from '../ItemDetail/ItemDetailStyle';
 import { ItemCount } from '../../../../components/ItemCount/ItemCount';
 import { ConfirmarCompra } from '../../../../components/ConfirmarCompra/ConfirmarCompra';
+import { CartContext } from '../../../../CartContext/CartContext';
 
 const useStyles = makeStyles((theme) => itemDetailStyle(theme));
 
@@ -14,14 +15,17 @@ export const ItemDetail = props => {
     const classes = useStyles();
     const [agregarCart, setAgregarCart] = useState(false);
     const [cantidadComics, setCantidadComics] = useState(0);
+    const {addItem, removeItem} = useContext(CartContext);
 
     const onAdd = cantidadCompra => {
         setCantidadComics(cantidadCompra);
         setAgregarCart(true);
+        addItem({item: props, quantity: cantidadCompra});
     }
 
     const cancelarCart = () => {
-        setAgregarCart(false);;
+        setAgregarCart(false);
+        removeItem(props.id);
     }
     
     return <>
