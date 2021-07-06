@@ -5,6 +5,7 @@ export const CartContext = createContext();
 export const CartContextProvider = props => {
     const [itemsQuantity, setItemsQuantity] = useState(0);
     const [itemsCart, setItemsCart] = useState([]);
+    const [subTotal, setSubTotal] = useState(0);  
 
 
     const IsInCart = idItem => {
@@ -13,6 +14,7 @@ export const CartContextProvider = props => {
 
 
     const addItem = itemAgregado => {
+        setSubTotal(subTotal + (itemAgregado.item.price * itemAgregado.quantity))
         setItemsQuantity(itemsQuantity + itemAgregado.quantity);
         if (IsInCart(itemAgregado.item.id)) {
             const actualizarItem = itemsCart.map((itemCart) => {
@@ -32,6 +34,7 @@ export const CartContextProvider = props => {
     const clear = () => {
         setItemsCart([]);
         setItemsQuantity(0);
+        setSubTotal(0);
     }
 
 
@@ -39,6 +42,7 @@ export const CartContextProvider = props => {
         const selectRemoveItem = itemsCart.find(itemCart => itemCart.item.id === id);
         setItemsQuantity(itemsQuantity - selectRemoveItem.quantity);
         setItemsCart(itemsCart.filter((item) => item.item.id !== id));
+        setSubTotal(subTotal - (selectRemoveItem.item.price * selectRemoveItem.quantity));
     }
 
 
@@ -47,7 +51,7 @@ export const CartContextProvider = props => {
     }, [itemsCart]);
 
 
-    return <CartContext.Provider value={{itemsCart, addItem, clear, removeItem, itemsQuantity}}>
+    return <CartContext.Provider value={{itemsCart, addItem, clear, removeItem, itemsQuantity, subTotal}}>
         {props.children}
     </CartContext.Provider>
 }

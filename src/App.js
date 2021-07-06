@@ -5,11 +5,12 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ItemListContainer } from './screens/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './screens/ItemDetailContainer/ItemDetailContainer';
 import { CartContextProvider } from './CartContext/CartContext';
+import { Cart } from './screens/Cart/Cart';
 
 function App() {
   return <CartContextProvider>
     <BrowserRouter>
-      <NavBar img='./img/carritoCompra.png' alt='imagen carrito de compras'/>
+      <NavBar img='../img/carritoCompra.png' alt='imagen carrito de compras'/>
       <Switch>
         <Route exact path='/'>
           <ItemListContainer />
@@ -19,6 +20,9 @@ function App() {
         </Route>
         <Route exact path='/item/:id'>
           <ItemDetailContainer />
+        </Route>
+        <Route exact path='/cart'>
+          <Cart />
         </Route>
       </Switch>
       </BrowserRouter>
