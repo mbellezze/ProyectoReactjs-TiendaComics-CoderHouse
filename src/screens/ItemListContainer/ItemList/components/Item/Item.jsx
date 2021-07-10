@@ -17,12 +17,12 @@ export const Item = props => {
         <Card className={classes.cardPadre}>
             <CardActionArea>
             <Link to={`/item/${props.id}`}>
-                <CardMedia component='img' alt={props.alt} image={props.imagenUrl}/> 
+                <CardMedia component='img' alt={props.data.alt} image={props.data.imagenUrl}/> 
             </Link>
                 <CardContent>
-                    <Typography component="h2" className={classes.titulo}>{props.title}</Typography>
-                    <Typography color="textSecondary" component="p">{props.description}</Typography>
-                    <Typography className={classes.precio}>${props.price}</Typography>
+                    <Typography component="h2" className={classes.titulo}>{props.data.title}</Typography>
+                    <Typography color="textSecondary" component="p">{props.data.description}</Typography>
+                    <Typography className={classes.precio}>${props.data.price}</Typography>
                     <Typography variant="h6" component="p">ID: {props.id}</Typography>
                 </CardContent>
             </CardActionArea>

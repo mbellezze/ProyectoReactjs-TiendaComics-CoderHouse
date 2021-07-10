@@ -5,10 +5,11 @@ import Grid from '@material-ui/core/Grid';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { itemListStyle } from './ItemListStyle';
 import { useParams } from 'react-router-dom';
+import { dataBase } from '../../../Firebase/Firebase'
 
 const useStyles = makeStyles((theme) => itemListStyle(theme));
 
-const myPromise = () => {
+/* const myPromise = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => resolve (
             [
@@ -59,7 +60,7 @@ const myPromise = () => {
             ]
         ), 2000)
     })
-}
+} */
 
 export const ItemList = () => {
     const classes = useStyles();
@@ -68,11 +69,28 @@ export const ItemList = () => {
 
 
     useEffect(() => {
-        myPromise().then(dataProductos => comicID === undefined ? 
+        const itemCollection = dataBase.collection("items");
+        let filtrarCategorias;
+        if (comicID === undefined) {
+            filtrarCategorias = itemCollection.get();    
+        }
+        else {
+            filtrarCategorias = itemCollection.where('comic', '==', comicID).get();
+        }
+
+        filtrarCategorias.then((querySnapshot) => {
+            setBaseComics(querySnapshot.docs.map(doc => (
+                {
+                    id: doc.id,
+                    data: doc.data()
+                }
+            )));
+        })
+        /* myPromise().then(dataProductos => comicID === undefined ? 
             setBaseComics(dataProductos)
             :
             setBaseComics(dataProductos.filter(element => element.comic === comicID))
-        )
+        ) */
     }, [comicID]);
 
     
