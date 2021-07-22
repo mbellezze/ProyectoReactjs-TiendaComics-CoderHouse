@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { TextField, Typography, Button, Grid } from '@material-ui/core';
 import { finalizarCompraStyle } from './FinalizarCompraStyle';
 import { makeStyles } from '@material-ui/core/styles';
+import { CartContext } from '../../../../CartContext/CartContext';
 
 const useStyle = makeStyles((theme) => finalizarCompraStyle(theme));
 
@@ -21,6 +22,7 @@ export const FinalizarCompra = props => {
 
     const classes = useStyle();
     const [buyerFormData, setBuyerFormData] = useState(initialForm);
+    const {subTotal} = useContext(CartContext);
 
 
     const handleChange = event => {
@@ -71,7 +73,7 @@ export const FinalizarCompra = props => {
             />
             <Grid className={classes.actionsContainer} container direction="row" alignItems="stretch">
                 <Grid className={classes.totalContainer} item xs={6}>
-                    <div className={classes.total}> Total: ${props.subTotal}</div>
+                    <div className={classes.total}> Total: ${subTotal}</div>
                 </Grid>
                 <Grid className={classes.submitContainer} item xs={6}>
                     <Button type='submit' className={classes.submmitButton}>
