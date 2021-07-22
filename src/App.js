@@ -6,6 +6,7 @@ import { ItemListContainer } from './screens/ItemListContainer/ItemListContainer
 import { ItemDetailContainer } from './screens/ItemDetailContainer/ItemDetailContainer';
 import { CartContextProvider } from './CartContext/CartContext';
 import { Cart } from './screens/Cart/Cart';
+import { FinalizarCompra } from './screens/Cart/components/FinalizarCompra/FinalizarCompra';
 
 function App() {
   return <CartContextProvider>
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route exact path='/cart'>
           <Cart />
+        </Route>
+        <Route exact path='/finalizar'>
+          <FinalizarCompra />
         </Route>
       </Switch>
       </BrowserRouter>
