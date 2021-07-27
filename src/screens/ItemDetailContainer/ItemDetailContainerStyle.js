@@ -4,7 +4,7 @@ export const itemDetailContainerStyle = theme => {
             width: '100%'
         },
         container:{
-            marginTop: '127px',
+            marginTop: '8px',
             height: '100vh',
             backgroundColor: 'orange',
         },

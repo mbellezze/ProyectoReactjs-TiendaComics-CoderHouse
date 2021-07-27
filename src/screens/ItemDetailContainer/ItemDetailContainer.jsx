@@ -21,12 +21,7 @@ export const ItemDetailContainer = () => {
         item.get().then((doc) => {
             setDetalle([{id: doc.id, ...doc.data()}]);
         })
-        /* getItems().then(dataProductos => id === undefined ?
-            setDetalle(dataProductos)
-            :
-            setDetalle(dataProductos.filter(element => element.id === parseInt(id)))
-        ) */
-    }, []);
+    }, []); //eslint-disable-line react-hooks/exhaustive-deps
     
     return <>
         { detalle.length === 0 ? (<div className={classes.linearPro}><LinearProgress/></div>) : 

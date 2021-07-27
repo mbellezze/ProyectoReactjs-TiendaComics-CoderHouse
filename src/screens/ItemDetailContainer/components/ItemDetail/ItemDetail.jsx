@@ -37,7 +37,7 @@ export const ItemDetail = props => {
             </Grid>
             <Grid item xs={3}>
                 <Typography component="h2" className={classes.titulo}>{props.title}</Typography>
-                <Typography color="textSecondary" component="p">{props.description}</Typography>
+                <Typography className={classes.description} color="textSecondary" component="p">{props.description}</Typography>
                 <Typography className={classes.precio}>${props.price}</Typography>
                 { 
                     agregarCart ? <ConfirmarCompra cancelarCart={cancelarCart}/>

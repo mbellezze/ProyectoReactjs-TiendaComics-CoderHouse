@@ -23,7 +23,6 @@ export const Item = props => {
                     <Typography component="h2" className={classes.titulo}>{props.data.title}</Typography>
                     <Typography color="textSecondary" component="p">{props.data.description}</Typography>
                     <Typography className={classes.precio}>${props.data.price}</Typography>
-                    <Typography variant="h6" component="p">ID: {props.id}</Typography>
                 </CardContent>
             </CardActionArea>
         </Card>

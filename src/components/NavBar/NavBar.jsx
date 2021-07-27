@@ -20,9 +20,9 @@ export const NavBar = ({img, alt}) => {
         <AppBar className={classes.containerNav}>
             <Toolbar className={classes.toolbar}>
                 <Link to={'/'}><img className={classes.logo} src="../img/logo.png" alt="imagen del logo"/></Link>
-                <Link to={`/category/${marvel}`} className={classes.links}>Marvel</Link>
+                <Link to={`/category/${marvel}`} className={classes.links}>MARVEL</Link>
                 <Link to={`/category/${dc}`} className={classes.links}>DC</Link>
-                <Link to={`/category/${indep}`} className={classes.link}>Independiente</Link>
+                <Link to={`/category/${indep}`} className={classes.link}>INDEPENDIENTE</Link>
                 {itemsCart.length > 0 ? <CartWidget img={img} alt={alt}/> : ''}
             </Toolbar>
         </AppBar>

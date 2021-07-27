@@ -4,10 +4,9 @@ export const cartTableStyle = theme => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            marginTop: '120px'
         },
         headerTable:{
-            backgroundColor: '#e6e6e6'
+            backgroundColor: 'orange'
         },
         tableContainer:{
             width: '90%',

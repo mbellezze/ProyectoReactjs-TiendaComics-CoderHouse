@@ -86,11 +86,6 @@ export const ItemList = () => {
                 }
             )));
         })
-        /* myPromise().then(dataProductos => comicID === undefined ? 
-            setBaseComics(dataProductos)
-            :
-            setBaseComics(dataProductos.filter(element => element.comic === comicID))
-        ) */
     }, [comicID]);
 
     

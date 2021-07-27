@@ -6,13 +6,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import { cartStyle } from './CartStyle';
 import { Link } from 'react-router-dom';
 import { Typography } from '@material-ui/core';
+import { CartDoneMessage } from './components/CartDoneMessage/CartDoneMessage';
+import { FormularioDatos } from './components/FormularioDatos/FormularioDatos';
 
 const useStyle = makeStyles((theme) => cartStyle(theme));
 
 export const Cart = () => {
     const classes = useStyle();
     const history = useHistory();
-    const {itemsCart} = useContext(CartContext);
+    const {itemsCart, orderId} = useContext(CartContext);
 
     return<>
     {
@@ -24,6 +26,14 @@ export const Cart = () => {
             </div>
         </div>
         :
-        <CartTable />
+        <>
+            { 
+                orderId ? <CartDoneMessage /> :
+                <>
+                    <CartTable />
+                    <FormularioDatos />
+                </>
+            }
+        </> 
     }</>
 }

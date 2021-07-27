@@ -4,10 +4,11 @@ export const itemCountStyle = theme => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            marginTop: '30px',
+            marginTop: '10px',
             '& > h5':{
                 display: 'flex',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                fontSize: '0.8em'
             },
             '& > div':{
                 display: 'flex',
@@ -25,6 +26,9 @@ export const itemCountStyle = theme => {
                     fontweight: 'bold',
                     cursor: 'pointer',
                     transition: 'opacity 0.2s ease',
+                    [theme.breakpoints.between('xs', 'md')]:{
+                        fontSize: '0.9em'
+                    },
                     '&:hover':{
                         opacity: '0.8',
                         backgroundColor: '#44af79'
@@ -49,6 +53,9 @@ export const itemCountStyle = theme => {
                 fontweight: 'bold',
                 cursor: 'pointer',
                 transition: 'opacity 0.2s ease',
+                [theme.breakpoints.between('xs', 'md')]:{
+                    fontSize: '0.9em'
+                },
                 '& > span':{
                     textTransform: 'capitalize'
                 },

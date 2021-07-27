@@ -5,7 +5,8 @@ export const CartContext = createContext();
 export const CartContextProvider = props => {
     const [itemsQuantity, setItemsQuantity] = useState(0);
     const [itemsCart, setItemsCart] = useState([]);
-    const [subTotal, setSubTotal] = useState(0);  
+    const [subTotal, setSubTotal] = useState(0); 
+    const [orderId, setOrderId] = useState('')  
 
 
     const IsInCart = idItem => {
@@ -35,6 +36,7 @@ export const CartContextProvider = props => {
         setItemsCart([]);
         setItemsQuantity(0);
         setSubTotal(0);
+        setOrderId('');
     }
 
 
@@ -46,12 +48,17 @@ export const CartContextProvider = props => {
     }
 
 
+    const updateOrderId = id =>{
+        setOrderId(id)
+    }
+
     useEffect(() => {
         console.log('Carrito Actualizado:', itemsCart);
     }, [itemsCart]);
 
 
-    return <CartContext.Provider value={{itemsCart, addItem, clear, removeItem, itemsQuantity, subTotal}}>
-        {props.children}
-    </CartContext.Provider>
+    return <CartContext.Provider 
+            value={{itemsCart, addItem, clear, removeItem, updateOrderId, orderId, itemsQuantity, subTotal}}>
+            {props.children}
+        </CartContext.Provider>
 }
