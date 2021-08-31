@@ -12,11 +12,11 @@ const useStyle = makeStyles((theme) => formularioDatosStyle(theme));
 
 export const FormularioDatos = props => {
 
-    const {itemsCart, subTotal, updateOrderId, clear} = useContext(CartContext)
+    const {itemsCart, subTotal, updateOrderId} = useContext(CartContext)
     const classes = useStyle();
     const [buyerData, setBuyerData] = useState({});
-    const [outOfStockArr, setOutOfStockArr] = useState([]);
-    const [error, setError] = useState(false)
+    const [ , setOutOfStockArr] = useState([]);
+    const [ , setError] = useState(false);
 
     const handleChange = event => {
         const { name, value } = event.target;
